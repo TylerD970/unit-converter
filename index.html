@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <h1>Unit Converter</h1>
+    <label for="a">Kilometers</label>
+    <input id="a" type="number">
+    
+    <label for="result">Miles</label>
+    <input id="result" type="text" readonly>
+
+    <button onclick="convert()">Convert</button>
+
+    <script src="script.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js")
+                .then(() => console.log("Service Worker Registered"))
+                .catch((error) => console.error("Error registering Service Worker:", error));
+        }
+    </script>
+</body>
+</html>
